@@ -3,8 +3,15 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Award, Users, Briefcase, BookOpen, Clock, GraduationCap } from "lucide-react";
+import { Award, Users, Briefcase, BookOpen, Clock, GraduationCap, ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const Index = () => {
   return (
@@ -126,6 +133,202 @@ const Index = () => {
               <div className="text-4xl font-bold mb-2">2+</div>
               <div className="text-primary-foreground/80">Years Experience</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Running Courses Carousel */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Currently Running Courses
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Join our active batches and start your learning journey today
+            </p>
+          </div>
+          
+          <Carousel className="w-full max-w-5xl mx-auto">
+            <CarouselContent>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <Card className="border-2 hover:border-primary transition-colors h-full">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Web Development</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Full-stack web development with React, Node.js, and modern frameworks
+                    </p>
+                    <div className="pt-2">
+                      <span className="inline-block px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">
+                        Batch Active
+                      </span>
+                    </div>
+                    <Link to="/courses">
+                      <Button variant="outline" className="w-full mt-4">
+                        View Details <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <Card className="border-2 hover:border-primary transition-colors h-full">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-accent" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Digital Marketing</h3>
+                    <p className="text-muted-foreground text-sm">
+                      SEO, social media marketing, content strategy, and analytics
+                    </p>
+                    <div className="pt-2">
+                      <span className="inline-block px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">
+                        Batch Active
+                      </span>
+                    </div>
+                    <Link to="/courses">
+                      <Button variant="outline" className="w-full mt-4">
+                        View Details <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <Card className="border-2 hover:border-primary transition-colors h-full">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="h-12 w-12 bg-destructive/10 rounded-lg flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-destructive" />
+                    </div>
+                    <h3 className="text-xl font-semibold">AI & Machine Learning</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Introduction to AI, Python programming, and ML fundamentals
+                    </p>
+                    <div className="pt-2">
+                      <span className="inline-block px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">
+                        Batch Active
+                      </span>
+                    </div>
+                    <Link to="/courses">
+                      <Button variant="outline" className="w-full mt-4">
+                        View Details <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <Card className="border-2 hover:border-primary transition-colors h-full">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Shorthand (English)</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Professional shorthand writing skills for stenography and note-taking
+                    </p>
+                    <div className="pt-2">
+                      <span className="inline-block px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">
+                        Batch Active
+                      </span>
+                    </div>
+                    <Link to="/courses">
+                      <Button variant="outline" className="w-full mt-4">
+                        View Details <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <Card className="border-2 hover:border-primary transition-colors h-full">
+                  <CardContent className="p-6 space-y-4">
+                    <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-accent" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Tally with GST</h3>
+                    <p className="text-muted-foreground text-sm">
+                      Complete accounting with Tally Prime and GST compliance
+                    </p>
+                    <div className="pt-2">
+                      <span className="inline-block px-3 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">
+                        Batch Active
+                      </span>
+                    </div>
+                    <Link to="/courses">
+                      <Button variant="outline" className="w-full mt-4">
+                        View Details <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Video Clips Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Course Highlights
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Watch our students in action learning AI and Shorthand
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="aspect-video bg-muted relative">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="AI & Machine Learning Course"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">AI & Machine Learning</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Students learning practical AI applications and Python programming
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="aspect-video bg-muted relative">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="Shorthand Training Course"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Shorthand Training</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Professional shorthand techniques for fast and accurate writing
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

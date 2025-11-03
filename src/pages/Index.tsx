@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Award, Users, Briefcase, BookOpen, Clock, GraduationCap, ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
+import practicalVideo from "@/assets/course-practical.mp4";
 import {
   Carousel,
   CarouselContent,
@@ -293,18 +294,19 @@ const Index = () => {
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="aspect-video bg-muted relative">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="AI & Machine Learning Course"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src={practicalVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">AI & Machine Learning</h3>
+                  <h3 className="text-xl font-semibold mb-2">Practical Training Session</h3>
                   <p className="text-muted-foreground text-sm">
-                    Students learning practical AI applications and Python programming
+                    Watch our students in hands-on practical training sessions
                   </p>
                 </div>
               </CardContent>

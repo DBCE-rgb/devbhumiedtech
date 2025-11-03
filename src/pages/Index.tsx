@@ -7,6 +7,7 @@ import { Award, Users, Briefcase, BookOpen, Clock, GraduationCap, ArrowRight } f
 import logo from "@/assets/logo.jpeg";
 import practicalVideo from "@/assets/course-practical.mp4";
 import shorthandVideo from "@/assets/course-shorthand.mp4";
+import motivationVideo from "@/assets/course-motivation.mp4";
 import {
   Carousel,
   CarouselContent,
@@ -291,7 +292,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="aspect-video bg-muted relative">
@@ -329,6 +330,27 @@ const Index = () => {
                   <h3 className="text-xl font-semibold mb-2">Shorthand Training</h3>
                   <p className="text-muted-foreground text-sm">
                     Professional shorthand techniques for fast and accurate writing
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <div className="aspect-video bg-muted relative">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src={motivationVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">Student Motivation</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Inspiring messages and success stories from our learning community
                   </p>
                 </div>
               </CardContent>

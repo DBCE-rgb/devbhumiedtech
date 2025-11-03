@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Award, Users, Briefcase, BookOpen, Clock, GraduationCap, ArrowRight } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import heroImage from "@/assets/hero-education.jpg";
 import practicalVideo from "@/assets/course-practical.mp4";
 import shorthandVideo from "@/assets/course-shorthand.mp4";
 import motivationVideo from "@/assets/course-motivation.mp4";
@@ -51,8 +51,8 @@ const Index = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src={logo} 
-                alt="Dev Bhumi Computer Education" 
+                src={heroImage} 
+                alt="Dev Bhumi Computer Education - Modern Learning Environment" 
                 className="w-full max-w-md rounded-2xl shadow-2xl"
               />
             </div>

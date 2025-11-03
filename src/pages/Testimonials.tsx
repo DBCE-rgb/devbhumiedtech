@@ -5,6 +5,13 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
+    name: "Khushboo",
+    course: "Student",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Khushboo",
+    rating: 5,
+    comment: "Dev bhoomi computer education in solan which is the best computer center and it is made the best by the teachers here especially our Simran mam who teach us very well and she also treat us very well, so I would personally say that all of you should come here and study here once. ☺️❤️",
+  },
+  {
     name: "Priya Sharma",
     course: "Full Stack Web Development",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Priya",

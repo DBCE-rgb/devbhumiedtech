@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Award, Users, Briefcase, BookOpen, Clock, GraduationCap, ArrowRight } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
 import practicalVideo from "@/assets/course-practical.mp4";
+import shorthandVideo from "@/assets/course-shorthand.mp4";
 import {
   Carousel,
   CarouselContent,
@@ -315,13 +316,14 @@ const Index = () => {
             <Card className="overflow-hidden">
               <CardContent className="p-0">
                 <div className="aspect-video bg-muted relative">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Shorthand Training Course"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="metadata"
+                  >
+                    <source src={shorthandVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">Shorthand Training</h3>

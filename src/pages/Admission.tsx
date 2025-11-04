@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { NotificationBar } from "@/components/NotificationBar";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -81,6 +82,7 @@ const Admission = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
+      <NotificationBar />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary/10 to-accent/10 py-20">

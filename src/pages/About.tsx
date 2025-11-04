@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { NotificationBar } from "@/components/NotificationBar";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Heart } from "lucide-react";
@@ -7,6 +8,7 @@ const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
+      <NotificationBar />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary/10 to-accent/10 py-20">

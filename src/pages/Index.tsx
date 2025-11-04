@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { NotificationBar } from "@/components/NotificationBar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,6 +21,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
+      <NotificationBar />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/5 py-20 lg:py-32">

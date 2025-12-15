@@ -45,6 +45,7 @@ export interface ThemeColors {
   primary: string;
   secondary: string;
   accent: string;
+  [key: string]: string;
 }
 
 // Testimonials

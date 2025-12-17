@@ -242,7 +242,7 @@ const Admission = () => {
                   </Button>
 
                   <p className="text-sm text-muted-foreground text-center">
-                    By submitting this form, you agree to be contacted by Dev Bhumi Computer Education regarding your admission inquiry.
+                    By submitting this form, you agree to be contacted by Dev Bhumi Computer Academy regarding your admission inquiry.
                   </p>
                 </form>
               </CardContent>

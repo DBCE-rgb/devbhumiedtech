@@ -61,7 +61,7 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-lg text-muted-foreground">
-              Get in touch with us for course inquiries, admissions, or any questions about Dev Bhumi Computer Education
+              Get in touch with us for course inquiries, admissions, or any questions about Dev Bhumi Computer Academy
             </p>
           </div>
         </div>
@@ -115,8 +115,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                      <a href="mailto:Devbhumicomputereducation@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        Devbhumicomputereducation@gmail.com
+                      <a href="mailto:Devbhumicomputeracademy@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        Devbhumicomputeracademy@gmail.com
                       </a>
                     </div>
                   </div>
@@ -252,7 +252,7 @@ const Contact = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Dev Bhumi Computer Education Location"
+                title="Dev Bhumi Computer Academy Location"
               />
             </div>
           </div>

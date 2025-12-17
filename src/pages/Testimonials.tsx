@@ -17,7 +17,7 @@ const testimonials = [
     course: "Full Stack Web Development",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Priya",
     rating: 5,
-    comment: "Dev Bhumi Computer Education transformed my career! The instructors are highly knowledgeable and the hands-on training helped me land my first job as a web developer. Highly recommended!",
+    comment: "Dev Bhumi Computer Academy transformed my career! The instructors are highly knowledgeable and the hands-on training helped me land my first job as a web developer. Highly recommended!",
   },
   {
     name: "Rahul Verma",
@@ -45,14 +45,14 @@ const testimonials = [
     course: "Adobe Photoshop & CorelDRAW",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Neha",
     rating: 5,
-    comment: "I'm now a professional graphic designer thanks to Dev Bhumi! The designing courses are comprehensive and the instructors are industry experts. Worth every penny!",
+    comment: "I'm now a professional graphic designer thanks to Dev Bhumi Computer Academy! The designing courses are comprehensive and the instructors are industry experts. Worth every penny!",
   },
   {
     name: "Amit Kumar",
     course: "MS Office & Tally",
     image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Amit",
     rating: 5,
-    comment: "Affordable fees and quality education. I completed MS Office and Tally courses which helped me get a job in a private company. The staff is friendly and very helpful.",
+    comment: "Affordable fees and quality education at Dev Bhumi Computer Academy. I completed MS Office and Tally courses which helped me get a job in a private company. The staff is friendly and very helpful.",
   },
   {
     name: "Sonia Rana",
@@ -91,7 +91,7 @@ const Testimonials = () => {
               Student Testimonials
             </h1>
             <p className="text-lg text-muted-foreground">
-              Hear from our successful students who have transformed their careers with Dev Bhumi Computer Education
+              Hear from our successful students who have transformed their careers with Dev Bhumi Computer Academy
             </p>
           </div>
         </div>

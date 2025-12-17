@@ -12,10 +12,10 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Dev Bhumi Computer Education" className="h-16 w-16 object-contain" />
+              <img src={logo} alt="Dev Bhumi Computer Academy" className="h-16 w-16 object-contain" />
               <div>
                 <div className="text-lg font-bold text-primary">Dev Bhumi</div>
-                <div className="text-sm text-muted-foreground">Computer Education</div>
+                <div className="text-sm text-muted-foreground">Computer Academy</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -49,7 +49,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="mailto:Devbhumicomputereducation@gmail.com" className="hover:text-primary transition-colors">Devbhumicomputereducation@gmail.com</a>
+                <a href="mailto:Devbhumicomputeracademy@gmail.com" className="hover:text-primary transition-colors">Devbhumicomputeracademy@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -72,7 +72,7 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Dev Bhumi Computer Education | All Rights Reserved</p>
+          <p>© {currentYear} Dev Bhumi Computer Academy | All Rights Reserved</p>
         </div>
       </div>
     </footer>

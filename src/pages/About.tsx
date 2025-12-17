@@ -15,7 +15,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              About Dev Bhumi Computer Education
+              About Dev Bhumi Computer Academy
             </h1>
             <p className="text-lg text-muted-foreground">
               Empowering Himachal Pradesh with quality computer education since September 2022
@@ -32,7 +32,7 @@ const About = () => {
               <h2 className="text-3xl font-bold text-foreground mb-6">Our Story</h2>
               <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
                 <p>
-                  Established in <strong className="text-foreground">September 2022</strong>, Dev Bhumi Computer Education was founded with a vision to bridge the digital literacy gap in Solan, Himachal Pradesh. Located in the heart of Kotla Nala, we have been dedicated to providing accessible, high-quality computer training to students, professionals, and entrepreneurs.
+                  Established in <strong className="text-foreground">September 2022</strong>, Dev Bhumi Computer Academy was founded with a vision to bridge the digital literacy gap in Solan, Himachal Pradesh. Located in the heart of Kotla Nala, we have been dedicated to providing accessible, high-quality computer training to students, professionals, and entrepreneurs.
                 </p>
                 <p>
                   Our institute is strategically located at <strong className="text-foreground">Thakur Complex, 2nd Floor, Kotla Nala, opposite PNB Bank</strong>, making it easily accessible for learners across Solan district. What started as a small initiative has grown into a trusted name in computer education, with hundreds of successful students.
@@ -102,12 +102,12 @@ const About = () => {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground">Founder's Message</h3>
-                      <p className="text-muted-foreground">Director, Dev Bhumi Computer Education</p>
+                      <p className="text-muted-foreground">Director, Dev Bhumi Computer Academy</p>
                     </div>
                   </div>
                   <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
                     <p>
-                      "When we started Dev Bhumi Computer Education in 2022, our goal was simple: to provide affordable, quality computer training that truly prepares students for the real world. Solan and the surrounding areas had limited options for comprehensive IT education, and we wanted to change that."
+                      "When we started Dev Bhumi Computer Academy in 2022, our goal was simple: to provide affordable, quality computer training that truly prepares students for the real world. Solan and the surrounding areas had limited options for comprehensive IT education, and we wanted to change that."
                     </p>
                     <p>
                       "Today, I'm proud to see hundreds of our students successfully building careers in technology, running their own businesses, and contributing to the digital economy. Our success is measured not by certificates issued, but by the lives we've transformed."

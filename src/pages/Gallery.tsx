@@ -80,7 +80,7 @@ const Gallery = () => {
               Gallery
             </h1>
             <p className="text-lg text-muted-foreground">
-              Glimpses from our workshops, events, and student achievements at Dev Bhumi Computer Education
+              Glimpses from our workshops, events, and student achievements at Dev Bhumi Computer Academy
             </p>
           </div>
         </div>

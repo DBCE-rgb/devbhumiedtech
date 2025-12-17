@@ -54,7 +54,7 @@ const Index = () => {
             <div className="flex justify-center">
               <img 
                 src={heroImage} 
-                alt="Dev Bhumi Computer Education - Modern Learning Environment" 
+                alt="Dev Bhumi Computer Academy - Modern Learning Environment" 
                 className="w-full max-w-md rounded-2xl shadow-2xl"
               />
             </div>

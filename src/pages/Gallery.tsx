@@ -5,55 +5,57 @@ import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { X } from "lucide-react";
 
-// Placeholder images for gallery
+// Import gallery images
+import anjaliCertificate from "@/assets/gallery/anjali-adca-certificate.jpeg";
+import ankitaCertificate from "@/assets/gallery/ankita-adca-certificate.jpeg";
+import aviyankCertificate from "@/assets/gallery/aviyank-adca-certificate.jpeg";
+import groupPhoto2 from "@/assets/gallery/group-photo-2.jpeg";
+import groupPhoto3 from "@/assets/gallery/group-photo-3.jpeg";
+import academyBuilding1 from "@/assets/gallery/academy-building-1.jpeg";
+import academyBuilding2 from "@/assets/gallery/academy-building-2.jpeg";
+
 const galleryImages = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
-    title: "Computer Lab Session",
-    category: "Workshops",
+    url: anjaliCertificate,
+    title: "Anjali - ADCA Diploma & Certificate",
+    category: "Certificates",
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
-    title: "Coding Workshop",
-    category: "Workshops",
+    url: ankitaCertificate,
+    title: "Ankita - ADCA Diploma Certificate",
+    category: "Certificates",
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
-    title: "Student Training",
-    category: "Events",
+    url: aviyankCertificate,
+    title: "Aviyank - ADCA Diploma & Certificate",
+    category: "Certificates",
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
-    title: "Certificate Distribution",
-    category: "Certificates",
-  },
-  {
-    id: 5,
-    url: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=800&q=80",
-    title: "Practical Training",
-    category: "Workshops",
-  },
-  {
-    id: 6,
-    url: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
-    title: "Team Discussion",
+    url: groupPhoto2,
+    title: "Students & Staff Group Photo",
     category: "Events",
   },
   {
-    id: 7,
-    url: "https://images.unsplash.com/photo-1542744094-24638eff58bb?w=800&q=80",
-    title: "Design Workshop",
-    category: "Workshops",
+    id: 5,
+    url: groupPhoto3,
+    title: "Certificate Distribution Ceremony",
+    category: "Events",
   },
   {
-    id: 8,
-    url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
-    title: "Success Stories",
-    category: "Certificates",
+    id: 6,
+    url: academyBuilding1,
+    title: "Dev Bhumi Computer Academy Building",
+    category: "Academy",
+  },
+  {
+    id: 7,
+    url: academyBuilding2,
+    title: "Academy Exterior View",
+    category: "Academy",
   },
 ];
 

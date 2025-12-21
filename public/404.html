@@ -6,10 +6,8 @@
     <script>
       // Single Page Apps for GitHub Pages
       // MIT License
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment
-      var pathSegmentsToKeep = 0;
+      // Handles SPA routing - keeps 1 path segment for repo name
+      var pathSegmentsToKeep = 1;
 
       var l = window.location;
       l.replace(

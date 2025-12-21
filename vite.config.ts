@@ -4,9 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
-  // Load env file based on `mode` in the current working directory.
-  const env = loadEnv(mode, process.cwd(), '');
+export default defineConfig({
+  base: process.env.VITE_BASE_PATH || '/',
+})
   
   return {
     // For GitHub Pages, the base path is set via VITE_BASE_PATH env variable

@@ -135,7 +135,7 @@ const Index = () => {
             </div>
             <div className="text-center">
               <Clock className="h-10 w-10 mx-auto mb-3" />
-              <div className="text-4xl font-bold mb-2">2+</div>
+              <div className="text-4xl font-bold mb-2">3+</div>
               <div className="text-primary-foreground/80">Years Experience</div>
             </div>
           </div>

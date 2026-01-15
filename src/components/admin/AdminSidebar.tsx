@@ -7,7 +7,9 @@ import {
   Palette, 
   LogOut,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Inbox,
+  Settings
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -16,10 +18,12 @@ import { useState } from 'react';
 
 const menuItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/admin' },
+  { icon: Inbox, label: 'Inquiries', path: '/admin/inquiries' },
+  { icon: BookOpen, label: 'Courses', path: '/admin/courses' },
   { icon: MessageSquare, label: 'Testimonials', path: '/admin/testimonials' },
   { icon: Image, label: 'Gallery', path: '/admin/gallery' },
-  { icon: BookOpen, label: 'Courses', path: '/admin/courses' },
   { icon: Palette, label: 'Theme Colors', path: '/admin/theme' },
+  { icon: Settings, label: 'Settings', path: '/admin/settings' },
 ];
 
 const AdminSidebar = () => {

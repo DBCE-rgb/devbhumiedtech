@@ -19,9 +19,13 @@ export type Database = {
           color: string | null
           created_at: string
           description: string
+          duration: string | null
+          eligibility: string | null
           features: string[] | null
+          fees: string | null
           icon: string | null
           id: string
+          image_url: string | null
           is_active: boolean
           sort_order: number | null
           title: string
@@ -32,9 +36,13 @@ export type Database = {
           color?: string | null
           created_at?: string
           description: string
+          duration?: string | null
+          eligibility?: string | null
           features?: string[] | null
+          fees?: string | null
           icon?: string | null
           id?: string
+          image_url?: string | null
           is_active?: boolean
           sort_order?: number | null
           title: string
@@ -45,9 +53,13 @@ export type Database = {
           color?: string | null
           created_at?: string
           description?: string
+          duration?: string | null
+          eligibility?: string | null
           features?: string[] | null
+          fees?: string | null
           icon?: string | null
           id?: string
+          image_url?: string | null
           is_active?: boolean
           sort_order?: number | null
           title?: string
@@ -88,6 +100,42 @@ export type Database = {
           is_active?: boolean
           sort_order?: number | null
           title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      inquiries: {
+        Row: {
+          course_interested: string | null
+          created_at: string
+          email: string
+          id: string
+          is_read: boolean
+          message: string | null
+          mobile: string
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          course_interested?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          is_read?: boolean
+          message?: string | null
+          mobile: string
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          course_interested?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          is_read?: boolean
+          message?: string | null
+          mobile?: string
+          name?: string
           updated_at?: string
         }
         Relationships: []

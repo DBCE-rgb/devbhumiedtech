@@ -48,6 +48,25 @@ export interface ThemeColors {
   [key: string]: string;
 }
 
+export interface Inquiry {
+  id: string;
+  name: string;
+  mobile: string;
+  email: string;
+  course_interested: string | null;
+  message: string | null;
+  is_read: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface SiteSetting {
+  id: string;
+  setting_key: string;
+  setting_value: Record<string, string>;
+  updated_at: string;
+}
+
 // Testimonials
 export const useTestimonials = () => {
   return useQuery({
@@ -329,6 +348,124 @@ export const useUpdateThemeColors = () => {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['theme_colors'] });
       toast({ title: "Success", description: "Theme colors updated" });
+    },
+    onError: (error: Error) => {
+      toast({ title: "Error", description: error.message, variant: "destructive" });
+    }
+  });
+};
+
+// Site Settings (all)
+export const useSiteSettings = () => {
+  return useQuery({
+    queryKey: ['site_settings'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('site_settings')
+        .select('*');
+      if (error) throw error;
+      return data as SiteSetting[];
+    }
+  });
+};
+
+export const useUpdateSiteSettings = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({ key, value }: { key: string; value: Record<string, string> }) => {
+      // Try to update first
+      const { data: existing } = await supabase
+        .from('site_settings')
+        .select('id')
+        .eq('setting_key', key)
+        .maybeSingle();
+
+      if (existing) {
+        const { error } = await supabase
+          .from('site_settings')
+          .update({ setting_value: value })
+          .eq('setting_key', key);
+        if (error) throw error;
+      } else {
+        const { error } = await supabase
+          .from('site_settings')
+          .insert({ setting_key: key, setting_value: value });
+        if (error) throw error;
+      }
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['site_settings'] });
+    }
+  });
+};
+
+// Inquiries
+export const useInquiries = () => {
+  return useQuery({
+    queryKey: ['inquiries'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('inquiries')
+        .select('*')
+        .order('created_at', { ascending: false });
+      if (error) throw error;
+      return data as Inquiry[];
+    }
+  });
+};
+
+export const useCreateInquiry = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async (inquiry: Omit<Inquiry, 'id' | 'is_read' | 'created_at' | 'updated_at'>) => {
+      const { data, error } = await supabase
+        .from('inquiries')
+        .insert(inquiry)
+        .select()
+        .single();
+      if (error) throw error;
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['inquiries'] });
+    }
+  });
+};
+
+export const useUpdateInquiry = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({ id, ...data }: Partial<Inquiry> & { id: string }) => {
+      const { error } = await supabase
+        .from('inquiries')
+        .update(data)
+        .eq('id', id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['inquiries'] });
+    }
+  });
+};
+
+export const useDeleteInquiry = () => {
+  const queryClient = useQueryClient();
+  const { toast } = useToast();
+
+  return useMutation({
+    mutationFn: async (id: string) => {
+      const { error } = await supabase
+        .from('inquiries')
+        .delete()
+        .eq('id', id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['inquiries'] });
+      toast({ title: "Success", description: "Inquiry deleted" });
     },
     onError: (error: Error) => {
       toast({ title: "Error", description: error.message, variant: "destructive" });

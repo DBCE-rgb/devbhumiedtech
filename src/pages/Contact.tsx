@@ -5,40 +5,70 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useCreateInquiry, useCourses } from "@/hooks/useAdminData";
+import { z } from "zod";
+
+const inquirySchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters").max(100),
+  email: z.string().email("Please enter a valid email"),
+  mobile: z.string().min(10, "Please enter a valid phone number").max(15),
+  course_interested: z.string().optional(),
+  message: z.string().max(1000, "Message must be less than 1000 characters").optional(),
+});
 
 const Contact = () => {
   const { toast } = useToast();
+  const createInquiry = useCreateInquiry();
+  const { data: courses } = useCourses();
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    mobile: "",
+    course_interested: "",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Client-side validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    const result = inquirySchema.safeParse(formData);
+    if (!result.success) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all fields",
+        title: "Validation Error",
+        description: result.error.errors[0].message,
         variant: "destructive",
       });
       return;
     }
 
-    // Show success message (static site - no backend)
-    toast({
-      title: "Message Received!",
-      description: "We'll get back to you soon. You can also call us at +91-9805500827",
-    });
+    try {
+      await createInquiry.mutateAsync({
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        course_interested: formData.course_interested || null,
+        message: formData.message || null,
+      });
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+      toast({
+        title: "Message Received!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      });
+
+      setFormData({ name: "", email: "", mobile: "", course_interested: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit your inquiry. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -115,8 +145,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                      <a href="mailto:Devbhumicomputeracademy@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        Devbhumicomputeracademy@gmail.com
+                      <a href="mailto:devbhumicomputereducation@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        devbhumicomputereducation@gmail.com
                       </a>
                     </div>
                   </div>
@@ -162,10 +192,8 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Full Name *
-                    </label>
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name *</Label>
                     <Input
                       id="name"
                       name="name"
@@ -177,10 +205,8 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email Address *
-                    </label>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -192,25 +218,40 @@ const Contact = () => {
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                      Phone Number *
-                    </label>
+                  <div className="space-y-2">
+                    <Label htmlFor="mobile">Phone Number *</Label>
                     <Input
-                      id="phone"
-                      name="phone"
+                      id="mobile"
+                      name="mobile"
                       type="tel"
-                      value={formData.phone}
+                      value={formData.mobile}
                       onChange={handleChange}
                       placeholder="+91-9805500827"
                       required
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Message *
-                    </label>
+                  <div className="space-y-2">
+                    <Label htmlFor="course_interested">Course Interested In</Label>
+                    <Select 
+                      value={formData.course_interested} 
+                      onValueChange={(value) => setFormData({ ...formData, course_interested: value })}
+                    >
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select a course (optional)" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {courses?.filter(c => c.is_active).map((course) => (
+                          <SelectItem key={course.id} value={course.title}>
+                            {course.title}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -218,11 +259,16 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Tell us about your inquiry..."
                       rows={5}
-                      required
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" size="lg">
+                  <Button 
+                    type="submit" 
+                    className="w-full" 
+                    size="lg"
+                    disabled={createInquiry.isPending}
+                  >
+                    {createInquiry.isPending && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
                     Send Message
                   </Button>
 

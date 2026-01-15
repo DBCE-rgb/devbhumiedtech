@@ -20,6 +20,10 @@ import AdminTestimonials from "./pages/admin/AdminTestimonials";
 import AdminGallery from "./pages/admin/AdminGallery";
 import AdminCourses from "./pages/admin/AdminCourses";
 import AdminTheme from "./pages/admin/AdminTheme";
+import AdminInquiries from "./pages/admin/AdminInquiries";
+import AdminSettings from "./pages/admin/AdminSettings";
+import ForgotPassword from "./pages/admin/ForgotPassword";
+import ResetPassword from "./pages/admin/ResetPassword";
 
 const queryClient = new QueryClient();
 
@@ -42,10 +46,14 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
 
               <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin/forgot-password" element={<ForgotPassword />} />
+              <Route path="/admin/reset-password" element={<ResetPassword />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/testimonials" element={<AdminTestimonials />} />
               <Route path="/admin/gallery" element={<AdminGallery />} />
               <Route path="/admin/courses" element={<AdminCourses />} />
+              <Route path="/admin/inquiries" element={<AdminInquiries />} />
+              <Route path="/admin/settings" element={<AdminSettings />} />
               <Route path="/admin/theme" element={<AdminTheme />} />
 
               <Route path="*" element={<NotFound />} />

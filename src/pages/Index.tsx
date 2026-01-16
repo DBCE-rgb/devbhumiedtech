@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { NotificationBar } from "@/components/NotificationBar";
 import { Footer } from "@/components/Footer";
+import { PromoBanner } from "@/components/PromoBanner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -20,6 +21,7 @@ import {
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <PromoBanner />
       <Navigation />
       <NotificationBar />
       

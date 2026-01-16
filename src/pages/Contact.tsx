@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { NotificationBar } from "@/components/NotificationBar";
 import { Footer } from "@/components/Footer";
+import { PromoBanner } from "@/components/PromoBanner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,7 @@ import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Loader2 } fro
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useCreateInquiry, useCourses } from "@/hooks/useAdminData";
+import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 
 const inquirySchema = z.object({
@@ -56,6 +58,23 @@ const Contact = () => {
         message: formData.message || null,
       });
 
+      // Send email notification
+      try {
+        await supabase.functions.invoke('send-inquiry-notification', {
+          body: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.mobile,
+            course: formData.course_interested || undefined,
+            message: formData.message || "No message provided",
+            inquiryType: "contact"
+          }
+        });
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+        // Don't fail the whole submission if email fails
+      }
+
       toast({
         title: "Message Received!",
         description: "Thank you for contacting us. We'll get back to you soon.",
@@ -80,6 +99,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <PromoBanner />
       <Navigation />
       <NotificationBar />
       
